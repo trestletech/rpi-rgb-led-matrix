@@ -28,7 +28,7 @@ rgbmatrix.so: rgbmatrix.o $(RGB_LIBRARY)
 	$(CXX) -s -shared -lstdc++ -Wl,-soname,librgbmatrix.so -o $@ $< $(LDFLAGS)
 
 %.o : %.cc
-	$(CXX) -I$(RGB_INCDIR) $(CXXFLAGS) -DADAFRUIT_RGBMATRIX_HAT -c -o $@ $<
+	$(CXX) -I$(RGB_INCDIR) $(CXXFLAGS) -DADAFRUIT_RGBMATRIX_HAT -fPIC -c -o $@ $<
 
 clean:
 	rm -f *.o $(OBJECTS) $(BINARIES)

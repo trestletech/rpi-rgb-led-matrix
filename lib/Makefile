@@ -29,7 +29,7 @@ led-matrix.o: led-matrix.cc $(INCDIR)/led-matrix.h
 thread.o : thread.cc $(INCDIR)/thread.h
 
 %.o : %.cc
-	$(CXX) -I$(INCDIR) $(CXXFLAGS) -c -o $@ $<
+	$(CXX) -I$(INCDIR) $(CXXFLAGS) -fPIC -c -o $@ $<
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
